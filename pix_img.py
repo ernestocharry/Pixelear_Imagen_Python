@@ -3,7 +3,7 @@ import os
 
 print(os.getcwd())
 
-file_name = 'DSC_0061.jpg'
+file_name = 'IMG_4431.jpg'
 img = Image.open(file_name)
 
 print(img.size)

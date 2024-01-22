@@ -4,3 +4,5 @@ venv/*
 *.DNG
 *.jpeg
 .DS_Store
+*.avi
+*.xlsx
