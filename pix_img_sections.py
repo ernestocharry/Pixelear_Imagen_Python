@@ -4,9 +4,9 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
 # Cargar la imagen
-file_name = '20240817_161744467_iOS.jpg'
+file_name = 'IMG_6889.png'
 
-for i in [75, 100, 150, 200]: 
+for i in [1, 2, 3, 4, 5, 6, 10, 15]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -45,6 +45,6 @@ for i in [75, 100, 150, 200]:
 
     # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
     if i<10:
-        plt.imsave(file_name.replace('.jpg', '_segmented_0' + str(num_clusters) + '.jpg'), segmented_image)
+        plt.imsave(file_name.replace('.png', '_segmented_0' + str(num_clusters) + '.png'), segmented_image)
     else:
-        plt.imsave(file_name.replace('.jpg', '_segmented_' + str(num_clusters) + '.jpg'), segmented_image)
+        plt.imsave(file_name.replace('.png', '_segmented_' + str(num_clusters) + '.png'), segmented_image)
