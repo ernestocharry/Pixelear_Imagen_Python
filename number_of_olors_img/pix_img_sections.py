@@ -4,9 +4,11 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
 # Cargar la imagen
-file_name = 'IMG_6889.png'
+file_name = '00014848.png'
 
-for i in [1, 2, 3, 4, 5, 6, 10, 15]: 
+for i in [1, 2, 3, 4, 5, 6, 10, 15]:
+    
+#for i in [20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
