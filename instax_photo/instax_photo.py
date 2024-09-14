@@ -1,12 +1,21 @@
 from PIL import Image, ImageDraw, ImageFont
 
+'''
+Code copy - paste from ChatGPT
+In order to create a instax efect in a photo. 
+'''
+
 
 def modificar_imagen(imagen_path, 
                      salida_path, 
                      tamaño_cuadrado=3024, 
                      tamaño_borde=500, 
-                     texto='Felipe Camilo a cuatro colores'
+                     texto='I used to scream ferociously, 3'
                      ):
+    '''
+    This function create a white board arount a picture with a square size 
+    with a text in the lower part.
+    '''
     
     # Abrir la imagen original
     imagen = Image.open(imagen_path)
@@ -33,16 +42,22 @@ def modificar_imagen(imagen_path,
     imagen_cuadrada = imagen_recortada.resize((tamaño_cuadrado, tamaño_cuadrado))
 
     # Crear una nueva imagen con borde blanco
-    imagen_con_borde = Image.new('RGB', (tamaño_cuadrado + 2 * tamaño_borde, tamaño_cuadrado + 2 * tamaño_borde), (255, 255, 255))
+    imagen_con_borde = Image.new('RGB', 
+                                 (tamaño_cuadrado + 2 * tamaño_borde, 
+                                  tamaño_cuadrado + 2 * tamaño_borde), 
+                                  (255, 255, 255)
+                                  )
     imagen_con_borde.paste(imagen_cuadrada, (tamaño_borde, tamaño_borde))
 
     # Añadir texto a la imagen
     draw = ImageDraw.Draw(imagen_con_borde)
     try:
-        fuente = ImageFont.truetype("QEDaveMergens.ttf", 200)  # Usa una fuente TrueType
+        # Usa una fuente TrueType
+        fuente = ImageFont.truetype("QEDaveMergens.ttf", 200)  
     except IOError:
         print("load error")
-        fuente = ImageFont.load_default()  # Fuente predeterminada si no se encuentra la especificada
+        # Fuente predeterminada si no se encuentra la especificada
+        fuente = ImageFont.load_default()  
 
     # Calcular la posición del texto
     print(texto)
@@ -59,8 +74,8 @@ def modificar_imagen(imagen_path,
     print(f'Imagen guardada en {salida_path}')
 
 # Ruta de la imagen original y la ruta de salida
-imagen_path = 'IMG_6889_segmented_04.png'
-salida_path = 'IMG_6889_imagen_instax_modificada.png'
+imagen_path = 'TPTIE8959_segmented_03.png'
+salida_path = 'TPTIE8959_segmented_03_instax_modificada.png'
 
 # Modificar la imagen para que tenga formato Instax
 modificar_imagen(imagen_path, salida_path)
