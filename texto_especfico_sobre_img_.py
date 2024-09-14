@@ -19,7 +19,8 @@ grosor = 20  # Grosor del texto
 #----------------------------
 # Definir el texto a agregar
 texto = "Cuantos"
-posicion = (round(0.05*image.shape[1]), round(0.60*image.shape[0]))  # Coordenadas donde se ubicará el texto (x, y)
+posicion = (round(0.05*image.shape[1]), round(0.60*image.shape[0]))  
+# Coordenadas donde se ubicará el texto (x, y)
 cv2.putText(image, texto, posicion, font, tamaño_fuente, color, grosor, cv2.LINE_AA)
 #-------------------------------------------------------------------------------
 texto = "colores"
@@ -49,9 +50,6 @@ cv2.putText(image, texto, posicion, font, tamaño_fuente, color, grosor, cv2.LIN
 texto = "informacion"
 posicion = (round(0.05*image.shape[1]), round(0.95*image.shape[0]))  
 cv2.putText(image, texto, posicion, font, tamaño_fuente, color, grosor, cv2.LINE_AA)
-
-
-
 
 
 # Guardar la imagen resultante
