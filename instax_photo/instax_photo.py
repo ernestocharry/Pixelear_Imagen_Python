@@ -74,8 +74,8 @@ def modificar_imagen(imagen_path,
     print(f'Imagen guardada en {salida_path}')
 
 # Ruta de la imagen original y la ruta de salida
-imagen_path = 'TPTIE8959_segmented_03.png'
-salida_path = 'TPTIE8959_segmented_03_instax_modificada.png'
+imagen_path = 'example.png'
+salida_path = 'example_instax_modificada.png'
 
 # Modificar la imagen para que tenga formato Instax
 modificar_imagen(imagen_path, salida_path)
