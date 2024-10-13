@@ -8,7 +8,7 @@ print('hasdas')
 # Cargar la imagen
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc += 'sources_and_results'
+folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
 file_name = 'pixe_0256_IMG_7179.JPG'

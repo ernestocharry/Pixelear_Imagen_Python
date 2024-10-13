@@ -173,7 +173,7 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc += 'sources_and_results'
+folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
 imagen_path = '5_Saramago.png'
