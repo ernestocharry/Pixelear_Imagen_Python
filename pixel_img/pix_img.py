@@ -7,7 +7,7 @@ Codigo para pixelear las imagenes ubicadas en la carpeta:
 """
 
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc += 'img_source_and_results'
+folder_loc += 'sources_and_results'
 os.chdir(folder_loc)
 
 file_name = 'DSC_0178.png'
