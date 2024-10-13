@@ -1,57 +1,28 @@
 from PIL import Image
 import os
 
-print(os.getcwd())
+"""
+Codigo para pixelear las imagenes ubicadas en la carpeta:
+    img_source_and_results
+"""
 
-file_name = 'DSC_0005.jpg'
+folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+folder_loc += 'img_source_and_results'
+os.chdir(folder_loc)
+
+file_name = 'DSC_0178.png'
 img = Image.open(file_name)
 
-print(img.size)
+no_pixels = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024] # No. de Pixels
 
-imgSmall = img.resize((1,1), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0001_'+file_name.replace('.jpg', '.png'))
+# Find the name without the extation (png or jpeg)
+point_loc = file_name.find('.')
+file_name_without_extension = file_name[:point_loc]
+extension = file_name[point_loc:]
 
-imgSmall = img.resize((2,2), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0002_'+file_name.replace('.jpg', '.png'))
+for i in no_pixels:
+    print('Number of Pixels: ', i)
+    imgSmall = img.resize((i,i), resample=Image.BILINEAR)
+    result = imgSmall.resize(img.size, Image.NEAREST)
+    result.save(file_name_without_extension + '_pixe_' + str(i) + extension)
 
-imgSmall = img.resize((4,4), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0004_'+file_name.replace('.jpg', '.png'))
-
-
-imgSmall = img.resize((8,8), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0008_'+file_name.replace('.jpg', '.png'))
-
-
-imgSmall = img.resize((16,16), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0016_'+file_name.replace('.jpg', '.png'))
-
-imgSmall = img.resize((32,32), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0032_'+file_name.replace('.jpg', '.png'))
-
-
-imgSmall = img.resize((64,64), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0064_'+file_name.replace('.jpg', '.png'))
-
-
-imgSmall = img.resize((128,128), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0128_'+file_name.replace('.jpg', '.png'))
-
-imgSmall = img.resize((256,256), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0256_'+file_name.replace('.jpg', '.png'))
-
-imgSmall = img.resize((512,512), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_0512_'+file_name.replace('.jpg', '.png'))
-
-imgSmall = img.resize((1024,1024), resample=Image.BILINEAR)
-result = imgSmall.resize(img.size, Image.NEAREST)
-result.save('pixe_1024_'+file_name.replace('.jpg', '.png'))
