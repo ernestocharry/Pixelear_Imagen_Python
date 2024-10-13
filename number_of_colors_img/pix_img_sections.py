@@ -1,14 +1,20 @@
+import os
 import cv2
 import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
+print('hasdas')
 # Cargar la imagen
-file_name = '00014848.png'
+# Ruta de la imagen original y la ruta de salida
+folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+folder_loc += 'sources_and_results'
+os.chdir(folder_loc)
 
-for i in [1, 2, 3, 4, 5, 6, 10, 15]:
-    
-#for i in [20, 25, 30, 50]: 
+file_name = 'pixe_0256_IMG_7179.JPG'
+
+for i in [2, 3, 4, 5, 6, 7, 8]: 
+#for i in [10, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -47,6 +53,6 @@ for i in [1, 2, 3, 4, 5, 6, 10, 15]:
 
     # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
     if i<10:
-        plt.imsave(file_name.replace('.png', '_segmented_0' + str(num_clusters) + '.png'), segmented_image)
+        plt.imsave(file_name.replace('.JPG', '_segmented_0' + str(num_clusters) + '.JPG'), segmented_image)
     else:
-        plt.imsave(file_name.replace('.png', '_segmented_' + str(num_clusters) + '.png'), segmented_image)
+        plt.imsave(file_name.replace('.JPG', '_segmented_' + str(num_clusters) + '.JPG'), segmented_image)
