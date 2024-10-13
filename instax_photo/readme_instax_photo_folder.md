@@ -1,1 +1,0 @@
-Dado una imagen cuadrada, la ubica en el centro y agrega un texto. 
