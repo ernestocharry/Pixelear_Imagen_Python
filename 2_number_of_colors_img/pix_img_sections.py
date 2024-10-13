@@ -11,9 +11,9 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-file_name = 'pixe_0256_IMG_7179.JPG'
+file_name = 'IMG_7179_pixe_128.JPG'
 
-for i in [2, 3, 4, 5, 6, 7, 8]: 
+for i in [8, 10, 15, 20]: 
 #for i in [10, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)

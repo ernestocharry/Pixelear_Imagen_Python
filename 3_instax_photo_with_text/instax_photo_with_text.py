@@ -143,8 +143,8 @@ def modificar_imagen(imagen_path,
 
     ancho_texto = draw.textlength( texto_1, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
-    y = tamaño_cuadrado + tamaño_borde + 50  # 10 píxeles debajo del borde
-    draw.text((x, y), texto_1, font=fuente, fill="#2e3034")
+    y = tamaño_cuadrado + tamaño_borde + 150  # 10 píxeles debajo del borde
+    draw.text((x, y), texto_1, font=fuente, fill="#67385e")
 
     ancho_texto = draw.textlength( texto_2, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
@@ -154,14 +154,14 @@ def modificar_imagen(imagen_path,
 
     # -----------------------------------------------------
     # Agregando segundo texto
-    if True: 
+    if False: 
         fuente = ImageFont.truetype(font_path, 80)
-        texto_2 = 'Ya está floreciendo'
+        texto_2 = 'Segunda'
         ancho_texto = draw.textlength(texto_2, font=fuente)
         x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
         y = tamaño_cuadrado + tamaño_borde + + 50 + 120 + 160  
         # 10 píxeles debajo del borde
-        draw.text((x, y), texto_2, font=fuente, fill="#e9cb97")
+        draw.text((x, y), texto_2, font=fuente, fill="#b56db7")
     # -----------------------------------------------------
 
 
@@ -176,14 +176,14 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = '5_Saramago.png'
+imagen_path = 'IMG_7179_pixe_128_segmented_20.JPG'
 
-salida_path = imagen_path.replace('.png', '_intax_w_text.png')
+salida_path = imagen_path.replace('.JPG', '_intax_w_text_2.JPG')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
 tamaño_borde=500
-texto='«Para vivir, hay que aprender que el agua vuelve al mar. Y que \nsufrir'
-texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
+texto='Original a 128 x 128 píxeles y 20 colores, 20\n'
+#texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
 modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
                  texto)
