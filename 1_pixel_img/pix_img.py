@@ -10,10 +10,10 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-file_name = 'IMG_7179.JPG'
+file_name = 'DSC_0177.PNG'
 img = Image.open(file_name)
 
-no_pixels = [8, 16, 32, 64, 128, 256, 512, 1024] # No. de Pixels
+no_pixels = [8,16,32,64,128,256,512,1024] # No. de Pixels
 
 # Find the name without the extation (png or jpeg)
 point_loc = file_name.find('.')
