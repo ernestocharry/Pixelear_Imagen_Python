@@ -11,9 +11,9 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-file_name = 'IMG_7179_pixe_128.JPG'
+file_name = 'DSC_0177_pixe_512.PNG'
 
-for i in [8, 10, 15, 20]: 
+for i in [2,4,6,8,10,12,15,20]: 
 #for i in [10, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
@@ -53,6 +53,6 @@ for i in [8, 10, 15, 20]:
 
     # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
     if i<10:
-        plt.imsave(file_name.replace('.JPG', '_segmented_0' + str(num_clusters) + '.JPG'), segmented_image)
+        plt.imsave(file_name.replace('.PNG', '_segmented_0' + str(num_clusters) + '.PNG'), segmented_image)
     else:
-        plt.imsave(file_name.replace('.JPG', '_segmented_' + str(num_clusters) + '.JPG'), segmented_image)
+        plt.imsave(file_name.replace('.PNG', '_segmented_' + str(num_clusters) + '.PNG'), segmented_image)
