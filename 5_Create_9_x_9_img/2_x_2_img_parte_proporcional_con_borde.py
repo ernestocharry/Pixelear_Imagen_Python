@@ -7,7 +7,7 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-def unir_imagenes_por_partes(imagenes, tamaño_borde=5, color_borde=(0, 0, 0), espacio_ejes=00):
+def unir_imagenes_por_partes(imagenes, tamaño_borde=0, color_borde=(0, 0, 0), espacio_ejes=00):
     # Asegurarnos de que haya 16 imágenes
     assert len(imagenes) == 4, "Se requieren exactamente 16 imágenes."
     
@@ -51,8 +51,8 @@ def unir_imagenes_por_partes(imagenes, tamaño_borde=5, color_borde=(0, 0, 0), e
         parte_con_borde = ImageOps.expand(parte, border=tamaño_borde, fill=color_borde)
         
         # Pegar la parte recortada con borde en la imagen final
-        x_offset = columna * (seccion_ancho + tamaño_borde) - 0*tamaño_borde+ espacio_ejes
-        y_offset = fila * (seccion_alto + tamaño_borde) - 0*tamaño_borde
+        x_offset = columna * (seccion_ancho + tamaño_borde) - 1*tamaño_borde+ espacio_ejes
+        y_offset = fila * (seccion_alto + tamaño_borde) - 1*tamaño_borde
         nueva_imagen.paste(parte_con_borde, (x_offset, y_offset))
 
 

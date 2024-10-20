@@ -46,7 +46,7 @@ def unir_imagenes_con_ejes(imagenes, tamaño_borde=5, color_borde=(0, 0, 0), esp
     # Fuente para los números (usaremos una fuente estándar del sistema)
     try:
         font_path = "cmu_serif-roman.ttf"  # Cambia por la ruta a tu fuente
-        font = ImageFont.truetype(font_path, 120)
+        font = ImageFont.truetype(font_path, 80)
     except IOError:
         font = ImageFont.load_default()  # Si no está disponible, usar la fuente predeterminada
     
@@ -58,9 +58,9 @@ def unir_imagenes_con_ejes(imagenes, tamaño_borde=5, color_borde=(0, 0, 0), esp
         # Ajustar la posición y para centrar mejor el texto en el espacio inferior
         y_pos = tamanio_final_y - (espacio_ejes // 2) + 10  # Desplazamos un poco hacia abajo
         if columna == 0: 
-            draw.text((x_pos, y_pos), '256 x 256 píxeles', fill="black", font=font, anchor="mm")     
+            draw.text((x_pos, y_pos), '256 x 256 píxeles', fill="#444e0f", font=font, anchor="mm")     
         else:
-            draw.text((x_pos, y_pos), '1024 x 1024 píxeles', fill="black", font=font, anchor="mm")
+            draw.text((x_pos, y_pos), '1024 x 1024 píxeles', fill="#444e0f", font=font, anchor="mm")
     
     # Dibujar las etiquetas personalizadas del eje vertical ("20 colores" y "4 colores")
     etiquetas_verticales = ["20 colores", "4 colores"]
@@ -73,7 +73,7 @@ def unir_imagenes_con_ejes(imagenes, tamaño_borde=5, color_borde=(0, 0, 0), esp
         text_draw = ImageDraw.Draw(text_img)
         
         # Dibujar la etiqueta
-        text_draw.text((300, 80), etiqueta, fill="black", font=font, anchor="mm")
+        text_draw.text((300, 80), etiqueta, fill="#444e0f", font=font, anchor="mm")
         
         # Rotar la imagen del texto 90 grados
         text_img_rotada = text_img.rotate(90, expand=1)
