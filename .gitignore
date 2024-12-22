@@ -1,0 +1,8 @@
+venv/*
+*.jpg
+*.png
+*.DNG
+*.jpeg
+.DS_Store
+*.avi
+*.xlsx
