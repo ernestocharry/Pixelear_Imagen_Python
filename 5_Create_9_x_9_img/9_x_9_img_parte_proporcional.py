@@ -4,6 +4,7 @@ import math
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
@@ -11,7 +12,7 @@ from PIL import Image
 
 def unir_imagenes_por_partes(imagenes):
     # Asegurarnos de que haya 81 imágenes
-    assert len(imagenes) == 81, "Se requieren exactamente 81 imágenes."
+    assert len(imagenes) == 4, "Se requieren exactamente 81 imágenes."
     
     # Abrir las 81 imágenes
     imagenes_abiertas = [Image.open(img) for img in imagenes]
@@ -57,6 +58,6 @@ def unir_imagenes_por_partes(imagenes):
 # Lista de rutas de las 81 imágenes cuadradas
 #imagenes = [f"imagen{i+1}.png" for i in range(81)]  # Ejemplo: ['imagen1.png', ..., 'imagen81.png']
 
-imagenes = ["5_Saramago.png" for i in range(81)] 
+imagenes = ["DSC_0155_segmented_04.JPEG" for i in range(4)] 
 
 unir_imagenes_por_partes(imagenes)
