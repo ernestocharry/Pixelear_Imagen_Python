@@ -7,14 +7,13 @@ import matplotlib.pyplot as plt
 print('hasdas')
 # Cargar la imagen
 # Ruta de la imagen original y la ruta de salida
-print(os.getcwd())
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-file_name = 'IMG_7603_1.PNG'
+file_name = 'DSC_0177_pixe_512.PNG'
 
-for i in [10, 12, 15, 20]: 
+for i in [2,4,6,8,10,12,15,20]: 
 #for i in [10, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)

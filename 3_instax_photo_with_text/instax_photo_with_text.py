@@ -144,13 +144,13 @@ def modificar_imagen(imagen_path,
     ancho_texto = draw.textlength( texto_1, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
     y = tamaño_cuadrado + tamaño_borde + 150  # 10 píxeles debajo del borde
-    draw.text((x, y), texto_1, font=fuente, fill="#63513d")
+    draw.text((x, y), texto_1, font=fuente, fill="#444e0f")
 
     ancho_texto = draw.textlength( texto_2, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
     y = tamaño_cuadrado + tamaño_borde + 50 + 120  
     # 10 píxeles debajo del borde
-    draw.text((x, y), texto_2, font=fuente, fill="#b0a394")
+    draw.text((x, y), texto_2, font=fuente, fill="#444e0f")
 
     # -----------------------------------------------------
     # Agregando segundo texto
@@ -161,7 +161,7 @@ def modificar_imagen(imagen_path,
         x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
         y = tamaño_cuadrado + tamaño_borde + + 50 + 120 + 160  
         # 10 píxeles debajo del borde
-        draw.text((x, y), texto_2, font=fuente, fill="#cdc1b7")
+        draw.text((x, y), texto_2, font=fuente, fill="#b3b26f")
     # -----------------------------------------------------
 
 
@@ -176,14 +176,14 @@ folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'IMG_0400_segmented_06.PNG'
+imagen_path = 'imagen_unida_4_partes_con_borde.PNG'
 
 salida_path = imagen_path.replace('.PNG', '_intax_w_text_2.PNG')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
 tamaño_borde=500
-texto='Felipe Camilo a seis colores\n'
+texto='¿Cuál aporta más información & cuánto es suficiente?\n'
 #texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
 modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
                  texto)
