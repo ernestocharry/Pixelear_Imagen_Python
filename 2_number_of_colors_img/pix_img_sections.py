@@ -7,14 +7,15 @@ import matplotlib.pyplot as plt
 print('hasdas')
 # Cargar la imagen
 # Ruta de la imagen original y la ruta de salida
+print(os.getcwd())
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-file_name = 'DSC_0177_pixe_512.PNG'
+file_name = 'DSC00295.png'
 
-for i in [2,4,6,8,10,12,15,20]: 
-#for i in [10, 20, 25, 30, 50]: 
+#for i in [3, 5, 7, 10]: 
+for i in [15, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -53,6 +54,6 @@ for i in [2,4,6,8,10,12,15,20]:
 
     # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
     if i<10:
-        plt.imsave(file_name.replace('.PNG', '_segmented_0' + str(num_clusters) + '.PNG'), segmented_image)
+        plt.imsave(file_name.replace('.png', '_segmented_0' + str(num_clusters) + '.png'), segmented_image)
     else:
-        plt.imsave(file_name.replace('.PNG', '_segmented_' + str(num_clusters) + '.PNG'), segmented_image)
+        plt.imsave(file_name.replace('.png', '_segmented_' + str(num_clusters) + '.png'), segmented_image)
