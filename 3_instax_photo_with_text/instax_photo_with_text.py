@@ -157,6 +157,7 @@ def modificar_imagen(imagen_path,
     if False: 
         fuente = ImageFont.truetype(font_path, 80)
         texto_2 = 'Powered by Python'
+        texto_2 = ''
         ancho_texto = draw.textlength(texto_2, font=fuente)
         x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
         y = tamaño_cuadrado + tamaño_borde + + 50 + 120 + 160  
@@ -173,9 +174,12 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
+imagen_path = 'IMG_7699_segmented_02.jpg'
+imagen_path = 'IMG_7700_segmented_03.jpg'
 imagen_path = 'DSC00295_segmented_05.png'
 
 salida_path = imagen_path.replace('.png', '_intax_w_text_2.png')

@@ -9,48 +9,57 @@ print('hasdas')
 # Ruta de la imagen original y la ruta de salida
 print(os.getcwd())
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
+
+files = ['IMG_7700.jpg']
 file_name = 'DSC00295.png'
 
+for file_name in files: 
+    for i in [2, 3, 4, 5, 6, 7, 8]: 
+    # for i in [20, 25, 30, 50]: 
+        print('We are going in: ', i)
+        image = cv2.imread(file_name)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 #for i in [3, 5, 7, 10]: 
 for i in [15, 20, 25, 30, 50]: 
     print('We are going in: ', i)
     image = cv2.imread(file_name)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    # Convertir la imagen en un array 2D de píxeles
-    pixels = image.reshape(-1, 3)
+        # Convertir la imagen en un array 2D de píxeles
+        pixels = image.reshape(-1, 3)
 
-    # Número de clusters (colores predominantes)
-    num_clusters = 20
-    num_clusters = i
+        # Número de clusters (colores predominantes)
+        num_clusters = 20
+        num_clusters = i
 
-    # Aplicar K-means
-    kmeans = KMeans(n_clusters=num_clusters)
-    kmeans.fit(pixels)
+        # Aplicar K-means
+        kmeans = KMeans(n_clusters=num_clusters)
+        kmeans.fit(pixels)
 
-    # Obtener los colores centrales y etiquetas de cada píxel
-    centers = kmeans.cluster_centers_
-    labels = kmeans.labels_
+        # Obtener los colores centrales y etiquetas de cada píxel
+        centers = kmeans.cluster_centers_
+        labels = kmeans.labels_
 
-    # Crear una imagen segmentada con los colores del K-means
-    segmented_image = centers[labels].reshape(image.shape).astype(np.uint8)
+        # Crear una imagen segmentada con los colores del K-means
+        segmented_image = centers[labels].reshape(image.shape).astype(np.uint8)
 
-    # Mostrar la imagen original y la imagen segmentada
-    plt.figure(figsize=(10, 5))
-    plt.subplot(1, 2, 1)
-    plt.title('Imagen Original')
-    plt.imshow(image)
-    plt.axis('off')
+        # Mostrar la imagen original y la imagen segmentada
+        plt.figure(figsize=(10, 5))
+        plt.subplot(1, 2, 1)
+        plt.title('Imagen Original')
+        plt.imshow(image)
+        plt.axis('off')
 
-    plt.subplot(1, 2, 2)
-    plt.title('Imagen Segmentada')
-    plt.imshow(segmented_image)
-    plt.axis('off')
+        plt.subplot(1, 2, 2)
+        plt.title('Imagen Segmentada')
+        plt.imshow(segmented_image)
+        plt.axis('off')
 
-    #plt.show()
+        #plt.show()
 
     # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
     if i<10:
