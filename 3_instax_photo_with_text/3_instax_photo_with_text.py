@@ -26,7 +26,7 @@ def dividir_texto(draw, texto, font, max_width):
     return lineas
 
 def create_blank_img_with_text(width, height): 
-    image = Image.new("RGB", (width, height), "white")
+    image = Image.new("RGB", (width, height),(  255,255, 255))
 
     # Crear un objeto para dibujar en la imagen
     draw = ImageDraw.Draw(image)
@@ -113,7 +113,8 @@ def modificar_imagen(imagen_path,
     imagen_con_borde = Image.new('RGB', 
                                  (tamaño_cuadrado + 2 * tamaño_borde, 
                                   tamaño_cuadrado + 2 * tamaño_borde), 
-                                  (255, 255, 255)
+                                  #(255, 255, 255)
+                                  (129, 147, 236)
                                   )
     imagen_con_borde = create_blank_img_with_text(
                                             tamaño_cuadrado + 2 * tamaño_borde, 
@@ -154,7 +155,7 @@ def modificar_imagen(imagen_path,
 
     # -----------------------------------------------------
     # Agregando segundo texto
-    if False: 
+    if True: 
         fuente = ImageFont.truetype(font_path, 80)
         texto_2 = 'Powered by Python'
         texto_2 = ''
@@ -178,16 +179,14 @@ folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'IMG_7699_segmented_02.jpg'
-imagen_path = 'IMG_7700_segmented_03.jpg'
-imagen_path = 'DSC00295_segmented_05.png'
+imagen_path = 'Felipe_DSC_0033_NoOfColors_25.jpg'
 
-salida_path = imagen_path.replace('.png', '_intax_w_text_2.png')
+salida_path = imagen_path.replace('.jpg', '_intax_w_text_2.jpg')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
 tamaño_borde=500
-texto='\n'
+texto=' \n '
 #texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
 modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
                  texto)

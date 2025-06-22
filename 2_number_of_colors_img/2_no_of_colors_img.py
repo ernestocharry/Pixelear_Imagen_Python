@@ -11,20 +11,22 @@ print(os.getcwd())
 # MacOS
 folder_loc = '/Users/charrypastrana/Documents/github/'
 # Windows
-#folder_loc = '/Users/felix/iCloudDrive/Documents/github/'
+folder_loc = '/Users/felix/iCloudDrive/Documents/github/'
 
 folder_loc += 'Pixelear_Imagen_Python/0_sources_and_results'
 os.chdir(folder_loc)
 
-files = ['DSC00295.png', 'IMG_7700.jpg']
+files = ['DSC00405.png', 'DSC00391.png']
+files = ['img_pixe_146.png']
 
 for file_name in files: 
     
     # Identificar si es png or jpg
     file_extention = file_name[file_name.find('.'):]
 
-    for i in [2, 3, 4, 5, 6, 7, 8]: 
-    # for i in [20, 25, 30, 50]: 
+    for i in [3, 4, 5, 7, 8]: 
+    #for i in [10, 12, 15, 18, 20, 25]: 
+    #for i in [18]: 
         print('File: ', file_name, 'and number of colors: ', i)
         image = cv2.imread(file_name)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
