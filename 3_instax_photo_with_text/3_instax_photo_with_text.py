@@ -175,11 +175,11 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'Felipe_DSC_0033_NoOfColors_25.jpg'
+imagen_path = 'pride_NoOfColors_07.jpg'
 
 salida_path = imagen_path.replace('.jpg', '_intax_w_text_2.jpg')
 
