@@ -17,7 +17,7 @@ folder_loc += 'Pixelear_Imagen_Python/0_sources_and_results'
 os.chdir(folder_loc)
 
 files = ['DSC00405.png', 'DSC00391.png']
-files = ['pride.jpg']
+files = ['DSC_0034.jpg']
 
 for file_name in files: 
     

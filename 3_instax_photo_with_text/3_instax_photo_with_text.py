@@ -179,7 +179,7 @@ folder_loc = '/Users/felix/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'pride_NoOfColors_07.jpg'
+imagen_path = 'DSC_0034_NoOfColors_15.jpg'
 
 salida_path = imagen_path.replace('.jpg', '_intax_w_text_2.jpg')
 
