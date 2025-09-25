@@ -26,7 +26,7 @@ def dividir_texto(draw, texto, font, max_width):
     return lineas
 
 def create_blank_img_with_text(width, height): 
-    image = Image.new("RGB", (width, height), "white")
+    image = Image.new("RGB", (width, height),(  255,255, 255))
 
     # Crear un objeto para dibujar en la imagen
     draw = ImageDraw.Draw(image)
@@ -113,7 +113,8 @@ def modificar_imagen(imagen_path,
     imagen_con_borde = Image.new('RGB', 
                                  (tamaño_cuadrado + 2 * tamaño_borde, 
                                   tamaño_cuadrado + 2 * tamaño_borde), 
-                                  (255, 255, 255)
+                                  #(255, 255, 255)
+                                  (129, 147, 236)
                                   )
     imagen_con_borde = create_blank_img_with_text(
                                             tamaño_cuadrado + 2 * tamaño_borde, 
@@ -144,13 +145,13 @@ def modificar_imagen(imagen_path,
     ancho_texto = draw.textlength( texto_1, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
     y = tamaño_cuadrado + tamaño_borde + 150  # 10 píxeles debajo del borde
-    draw.text((x, y), texto_1, font=fuente, fill="#444e0f")
+    draw.text((x, y), texto_1, font=fuente, fill="#a4241d")
 
     ancho_texto = draw.textlength( texto_2, font=fuente)
     x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
     y = tamaño_cuadrado + tamaño_borde + 50 + 120  
     # 10 píxeles debajo del borde
-    draw.text((x, y), texto_2, font=fuente, fill="#444e0f")
+    draw.text((x, y), texto_2, font=fuente, fill="#b0a394")
 
     # -----------------------------------------------------
     # Agregando segundo texto
@@ -162,7 +163,7 @@ def modificar_imagen(imagen_path,
         x = (tamaño_cuadrado + 2 * tamaño_borde - ancho_texto) / 2
         y = tamaño_cuadrado + tamaño_borde + + 50 + 120 + 160  
         # 10 píxeles debajo del borde
-        draw.text((x, y), texto_2, font=fuente, fill="#b3b26f")
+        draw.text((x, y), texto_2, font=fuente, fill="#bebebd")
     # -----------------------------------------------------
 
 
@@ -174,19 +175,27 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
+<<<<<<< HEAD:3_instax_photo_with_text/instax_photo_with_text.py
 folder_loc = '/Users/felix/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
 imagen_path = 'IMG_7699_segmented_02.jpg'
 imagen_path = 'IMG_0141_segmented_07.JPEG'
+=======
+folder_loc = '/Users/felix/Pixelear_Imagen_Python/'
+folder_loc += '0_sources_and_results'
+os.chdir(folder_loc)
+
+imagen_path = 'DSC_0034_NoOfColors_15.jpg'
+>>>>>>> c43f298d3f44d0a838411e82b6895ef45d55b817:3_instax_photo_with_text/3_instax_photo_with_text.py
 
 salida_path = imagen_path.replace('.JPEG', '_intax_w_text_2.JPEG')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
 tamaño_borde=500
-texto='\n'
+texto=' \n '
 #texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
 modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
                  texto)
