@@ -8,12 +8,13 @@ Codigo para pixelear las imagenes ubicadas en la carpeta:
 
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
 
-folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 print('Folder Loc: ', folder_loc)
 os.chdir(folder_loc)
 
 files = ['IMG_7699.jpg', 'IMG_7700.jpg']
+files = ['IMG_0141.JPEG']
 
 #file_name = 'DSC_0155.JPEG'
 for file_name in files: 

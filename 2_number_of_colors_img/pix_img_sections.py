@@ -8,16 +8,16 @@ print('hasdas')
 # Cargar la imagen
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc = '/Users/felix/iCloudDrive/Documents/github/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/Documents/github/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
 
-files = ['IMG_7700.jpg']
+files = ['IMG_0141.JPEG']
 
 for file_name in files: 
-    for i in [2, 3, 4, 5, 6, 7, 8]: 
-    # for i in [20, 25, 30, 50]: 
+    #for i in [2, 3, 4, 5, 6, 7, 8]: 
+    for i in [10, 12, 15, 20, 25, 30, 50]: 
         print('We are going in: ', i)
         image = cv2.imread(file_name)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -56,6 +56,6 @@ for file_name in files:
 
         # plt.imsave(file_name.replace('.jpg', '_original.jpg'), image)
         if i<10:
-            plt.imsave(file_name.replace('.jpg', '_segmented_0' + str(num_clusters) + '.jpg'), segmented_image)
+            plt.imsave(file_name.replace('.JPEG', '_segmented_0' + str(num_clusters) + '.JPEG'), segmented_image)
         else:
-            plt.imsave(file_name.replace('.jpg', '_segmented_' + str(num_clusters) + '.jpg'), segmented_image)
+            plt.imsave(file_name.replace('.JPEG', '_segmented_' + str(num_clusters) + '.JPEG'), segmented_image)
