@@ -175,20 +175,11 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-<<<<<<< HEAD:3_instax_photo_with_text/instax_photo_with_text.py
-folder_loc = '/Users/felix/Documents/github/Pixelear_Imagen_Python/'
-folder_loc += '0_sources_and_results'
-os.chdir(folder_loc)
-
-imagen_path = 'IMG_7699_segmented_02.jpg'
-imagen_path = 'IMG_0141_segmented_07.JPEG'
-=======
 folder_loc = '/Users/felix/Pixelear_Imagen_Python/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
 imagen_path = 'DSC_0034_NoOfColors_15.jpg'
->>>>>>> c43f298d3f44d0a838411e82b6895ef45d55b817:3_instax_photo_with_text/3_instax_photo_with_text.py
 
 salida_path = imagen_path.replace('.JPEG', '_intax_w_text_2.JPEG')
 
