@@ -175,13 +175,13 @@ def modificar_imagen(imagen_path,
 
 # Ruta de la imagen original y la ruta de salida
 folder_loc = '/Users/charrypastrana/Documents/github/Pixelear_Imagen_Python/'
-folder_loc = '/Users/felix/Pixelear_Imagen_Python/'
+folder_loc = '/Users/felix/Documents/github/pixelear_imagen/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'DSC_0034_NoOfColors_15.jpg'
+imagen_path = 'Coca.jpg'
 
-salida_path = imagen_path.replace('.JPEG', '_intax_w_text_2.JPEG')
+salida_path = imagen_path.replace('.jpg', '_intax_w_text_2.jpg')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000

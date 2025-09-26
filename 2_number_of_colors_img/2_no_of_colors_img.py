@@ -11,13 +11,13 @@ print(os.getcwd())
 # MacOS
 folder_loc = '/Users/charrypastrana/Documents/github/'
 # Windows
-folder_loc = '/Users/felix/'
+folder_loc = '/Users/felix/Documents/github/'
 
-folder_loc += 'Pixelear_Imagen_Python/0_sources_and_results'
+folder_loc += 'pixelear_imagen/0_sources_and_results'
 os.chdir(folder_loc)
 
 files = ['DSC00405.png', 'DSC00391.png']
-files = ['DSC_0034.jpg']
+files = ['Coca.jpg']
 
 for file_name in files: 
     
