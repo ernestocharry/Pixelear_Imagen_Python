@@ -77,7 +77,8 @@ def modificar_imagen(imagen_path,
                      salida_path, 
                      tamaño_cuadrado, 
                      tamaño_borde, 
-                     texto
+                     texto, 
+                     Color
                      ):
     '''
     This function create a white board arount a picture with a square size 
@@ -114,12 +115,12 @@ def modificar_imagen(imagen_path,
                                  (tamaño_cuadrado + 2 * tamaño_borde, 
                                   tamaño_cuadrado + 2 * tamaño_borde), 
                                   #(255, 255, 255)
-                                  (129, 147, 236)
+                                  Color
                                   )
-    imagen_con_borde = create_blank_img_with_text(
-                                            tamaño_cuadrado + 2 * tamaño_borde, 
-                                            tamaño_cuadrado + 2 * tamaño_borde
-                                            )
+    #imagen_con_borde = create_blank_img_with_text(
+    #                                        tamaño_cuadrado + 2 * tamaño_borde, 
+    #                                        tamaño_cuadrado + 2 * tamaño_borde
+    #                                        )
     imagen_con_borde.paste(imagen_cuadrada, (tamaño_borde, tamaño_borde))
 
     # Añadir texto a la imagen
@@ -170,7 +171,7 @@ def modificar_imagen(imagen_path,
 
     # Guardar la imagen resultante
     imagen_con_borde.save(salida_path)
-    imagen_con_borde.show()
+    #imagen_con_borde.show()
     print(f'Imagen guardada en {salida_path}')
 
 # Ruta de la imagen original y la ruta de salida
@@ -179,14 +180,32 @@ folder_loc = '/Users/felix/Documents/github/pixelear_imagen/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'Coca.jpg'
+imagen_path = 'IMG_3375_NoOfColors_08_PaletteColombia_FS.JPEG'
 
-salida_path = imagen_path.replace('.jpg', '_intax_w_text_2.jpg')
+salida_path = imagen_path.replace('.JPEG', '_intax_w_text_2.JPEG')
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
 tamaño_borde=500
 texto=' \n '
 #texto+=' también es parte de este caminar», El Kanka & Silvana Estrada, 20'
-modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
-                 texto)
+
+Color = (138, 43, 226)
+palette_rgb = [
+    (252, 209, 22),   # Amarillo bandera
+    (0, 56, 168),     # Azul bandera
+    (206, 17, 38),    # Rojo bandera
+    (50, 205, 50),    # Verde
+    (255, 140, 0),    # Naranja
+    (138, 43, 226),   # Violeta
+    (229, 229, 229),  # Gris claro
+    (43, 43, 43),      # Gris carbón
+    (255, 255, 255)
+]
+
+for index, color in enumerate(palette_rgb): 
+    
+    salida_path = imagen_path.replace('.JPEG', '_'+str(index) +'_intax_w_text_2.JPEG')
+
+    modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
+                 texto, color)
