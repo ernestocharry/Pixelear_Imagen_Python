@@ -180,9 +180,7 @@ folder_loc = '/Users/felix/Documents/github/pixelear_imagen/'
 folder_loc += '0_sources_and_results'
 os.chdir(folder_loc)
 
-imagen_path = 'IMG_3375_NoOfColors_08_PaletteColombia_FS.JPEG'
-
-salida_path = imagen_path.replace('.JPEG', '_intax_w_text_2.JPEG')
+imagen_path = 'IMG_7773_NoOfColors_05_PaletteColombia_FS.png'
 
 # Modificar la imagen para que tenga formato Instax
 tamaño_cuadrado=4000
@@ -204,8 +202,12 @@ palette_rgb = [
 ]
 
 for index, color in enumerate(palette_rgb): 
-    
-    salida_path = imagen_path.replace('.JPEG', '_'+str(index) +'_intax_w_text_2.JPEG')
+    file_extention = imagen_path[imagen_path.find('.'):]
 
-    modificar_imagen(imagen_path, salida_path, tamaño_cuadrado, tamaño_borde, 
+    out_name = imagen_path.replace(
+            file_extention,
+            '_'+str(index) +"_intax_w_text_2" + file_extention
+        )
+
+    modificar_imagen(imagen_path, out_name, tamaño_cuadrado, tamaño_borde, 
                  texto, color)
